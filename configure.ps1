@@ -20,12 +20,12 @@ if ([string]::IsNullOrEmpty($dbFilePath)) {
     exit -1;
 }
 
-$key = Read-Host -AsSecureString "Enter password for selected database"
-$keyEncrypted = $key | ConvertFrom-SecureString;
+$password = Read-Host -AsSecureString "Enter password for selected database"
+$passwordEncrypted = $password | ConvertFrom-SecureString;
 
 
 $configFilePath = "$PSScriptRoot\config.json"
-@{ dbFilePath = $dbFilePath; keyEncrypted = $keyEncrypted } | ConvertTo-Json -depth 100 | Out-File $configFilePath
+@{ dbFilePath = $dbFilePath; passwordEncrypted = $passwordEncrypted } | ConvertTo-Json -depth 100 | Out-File $configFilePath
 
 Write-Host Generated configuration file: $configFilePath
 
