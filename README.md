@@ -1,15 +1,14 @@
 # KPXC auto unlock [Windows only]
 
 This project contains set of scripts that allow KeepassXC database to be auto unlocked on Windows startup.
-The password for the database is encrypted with Windows Data Protection API (DPAPI) for the executing user and stored in config file.
 
 ## Security
 
-The password is encrypted using Windows Data Protection API. DPAPI derives the encryption key from user's logon credentials. 
-The encrypted password is stored in the file.
+The password for the database is encrypted with Windows Data Protection API (DPAPI) for the executing user and stored in config file.
+DPAPI derives the encryption key from user's logon credentials. 
+The stored password can be decrypted by any process running on the same user account. However, it *should* be protected from other users and physical access.
 
-However, it can be decrypted by any process running on the same user account. 
-So, in general **I don't recommend using these scripts** unless you really need the convenience of auto unlock. 
+In general **I don't recommend using this method of unlock** unless you really need the convenience of auto unlock on login. 
 
 ## Installation
 
