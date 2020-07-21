@@ -6,5 +6,6 @@ $shell = New-Object -ComObject WScript.Shell
 
 $shortcut = $shell.CreateShortcut($shortcutPath)
 $shortcut.TargetPath = $target
+$shortcut.WindowStyle = 7 # run minimized
 $shortcut.Save()
 
